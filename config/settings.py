@@ -72,6 +72,7 @@ ROOT_URLCONF = 'config.urls'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
     'http://127.0.0.1',
+    'http://127.0.0.1:5500',
     'http://web-production-2dac.up.railway.app',
     'https://web-production-2dac.up.railway.app',
 ]
@@ -93,6 +94,7 @@ CORS_ALLOW_HEADERS = ['*']
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost',
     'http://127.0.0.1',
+    'http://127.0.0.1:5500',
     'http://127.0.0.1:5173',
     'http://web-production-2dac.up.railway.app',
     'https://web-production-2dac.up.railway.app',
