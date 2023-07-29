@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-# import dj_database_url
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -72,9 +72,8 @@ ROOT_URLCONF = 'config.urls'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
     'http://127.0.0.1',
-    'http://127.0.0.1:5173',
-    'http://my-site.com',
-    'https://my-site.com',
+    'http://web-production-2dac.up.railway.app/',
+    'https://web-production-2dac.up.railway.app/',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -128,11 +127,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.config(default='')
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default='postgresql://postgres:uBg2Z0Msto3kRWxqQaBE@containers-us-west-32.railway.app:7286/railway')
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
