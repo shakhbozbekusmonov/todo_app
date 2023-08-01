@@ -44,17 +44,15 @@ class TodoUpdateAPIView(APIView):
     def put(self, request, pk):
         try:
             todo = Todo.objects.get(pk=pk)
+            todo.completed = not todo.completed
         except Todo.DoesNotExist:
             return Response({'error': 'Todo not found'}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = TodoSerializer(todo, data=request.data)
+        serializer = TodoSerializer(todo, data=request.data, partial=True)
         if serializer.is_valid():
-            serializer.validated_data['completed'] = request.data.get('completed', todo.completed)
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 
