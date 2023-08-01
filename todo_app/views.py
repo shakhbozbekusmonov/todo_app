@@ -38,3 +38,23 @@ class TodoListCreateAPIView(APIView):
 
         todo.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class TodoUpdateAPIView(APIView):
+    def put(self, request, pk):
+        try:
+            todo = Todo.objects.get(pk=pk)
+        except Todo.DoesNotExist:
+            return Response({'error': 'Todo not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = TodoSerializer(todo, data=request.data)
+        if serializer.is_valid():
+            serializer.validated_data['completed'] = request.data.get('completed', todo.completed)
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
