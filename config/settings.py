@@ -72,8 +72,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost',
     'http://127.0.0.1',
     'http://127.0.0.1:5500',
-    'http://web-production-2dac.up.railway.app',
-    'https://web-production-2dac.up.railway.app',
+    'http://todoapp-production-6191.up.railway.app',
+    'https://todoapp-production-6191.up.railway.app',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -95,8 +95,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1',
     'http://127.0.0.1:5500',
     'http://127.0.0.1:5173',
-    'http://web-production-2dac.up.railway.app',
-    'https://web-production-2dac.up.railway.app',
+    'http://todoapp-production-6191.up.railway.app',
+    'https://todoapp-production-6191.up.railway.app',
 ]
 
 CSRF_COOKIE_SECURE = True
