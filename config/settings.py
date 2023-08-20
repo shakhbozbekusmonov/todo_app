@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'whitenoise.runserver_nostatic',
     'drf_yasg',
-    'redis',
+  
     # local apps
     'todo_app',
 ]
